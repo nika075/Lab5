@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+//funkcja do policzenia metoda trapezów
 float func(float x)
 {
 	return 4*x-6*x+5;
 }
-//metoda trapezow
+//metoda trapezów
 float metodaTrapezow(int n,float xp,float xk)
 {
 
@@ -21,6 +22,7 @@ calka+=(func(xp)+func(xk))/2;
 calka*=dx;
 return calka;
 }
+//liczenie liczby pi metodą Leibniz-a
 float Leibniz(int n)
 {
     float suma = 0;
@@ -47,12 +49,12 @@ int main()
          
             float xp=rand()%30+1,xk=rand()%34+2;
             int n = 100 + rand()%5000;
-	        float wynik = metodaTrapezow(n,xp,xk);
+	    float wynik = metodaTrapezow(n,xp,xk);
             printf("Liczba n: %i poczatek: %f koniec: %f \n ",n,xp,xk);
             printf("Wynik metoda trapezow:  %f \n ", wynik);
             float wynikpi = Leibniz(n);
             printf("Liczba n: %i ",n);
-            printf("Wyliczono pi %f \n", wynikpi);	    
+            printf("Wynik liczba PI: %f \n", wynikpi);	    
             exit(0);
         }
     }
